@@ -19,29 +19,11 @@ img {
 
 img#profile {
     position: absolute;
-    left: 750px;
-    bottom: 250px;
+    left: 800px;
+    bottom: 200px;
     width: 250px;
     height: 250px;
 }
-
-/*a.test is the test button*/
-
-a.test {
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px 10px;
-    transition: .5s;
-    color: rgb(0, 255, 0);
-}
-
-a.test:hover {
-    transition: .5s;
-    background: rgb(0, 255, 0);
-    color: rgb(0, 100, 0);
-    box-shadow: 0 0 30px 20px rgb(0, 255, 0);
-}
-
 
 /*different layers of <div>*/
 
