@@ -1,0 +1,75 @@
+* {
+    font-family: cursive, sans-serif;
+}
+
+body {
+    background: black;
+    background-size: 100% 100%;
+    color: rgb(0, 255, 0);
+    animation: changecolor 60s infinite;
+}
+
+@keyframes changecolor {
+    50% {background: rgb(0, 100, 0);}
+}
+
+img {
+    scale: 100%;
+}
+
+img#profile {
+    position: absolute;
+    left: 750px;
+    bottom: 250px;
+    width: 250px;
+    height: 250px;
+}
+
+/*a.test is the test button*/
+
+a.test {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 10px;
+    transition: .5s;
+    color: rgb(0, 255, 0);
+}
+
+a.test:hover {
+    transition: .5s;
+    background: rgb(0, 255, 0);
+    color: rgb(0, 100, 0);
+    box-shadow: 0 0 30px 20px rgb(0, 255, 0);
+}
+
+
+/*different layers of <div>*/
+
+div {
+    width: fit-content;
+    height: fit-content;
+}
+
+div.div1 {
+    border-radius: 25px;
+    background: rgb(0, 100, 0);
+    padding: 10px;
+}
+
+div.div2 {
+    border-radius: 20px;
+    background: rgb(0, 125, 0);
+    padding: 10px;
+}
+
+div.div3 {
+    border-radius: 15px;
+    background: rgb(0, 150, 0);
+    padding: 10px;
+}
+
+/* div.div4 {                       div4 is unused(for now)
+    border-radius: 10px;
+    background: rgb(0, 175, 0);
+    padding: 10px;
+} */
