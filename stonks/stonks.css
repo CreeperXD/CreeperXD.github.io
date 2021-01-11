@@ -1,0 +1,32 @@
+* {
+    text-align: center;
+}
+
+/* body {
+    background: black;
+    animation: changecolor 60s infinite;
+}
+
+@keyframes changecolor {
+    50% {background: rgb(0, 100, 0);}
+} */
+
+table {
+    border-collapse: collapse;
+    border: 10px solid;
+    background-color: rgb(50, 50, 50);
+    color: rgb(100, 100, 255);
+}
+
+table, td, th {
+    border: 5px solid black;
+    padding: 25px;
+}
+
+/* th {
+
+}
+
+td {
+
+} */
