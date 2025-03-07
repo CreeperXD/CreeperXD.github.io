@@ -3,9 +3,9 @@ const Models = document.getElementsByClassName("Model");
 console.log(Models.length);
 const test = document.getElementById("BuildingModel");
 if (test == null) {
-    print("oh no");
+    console.log("oh no");
 } else {
-    print("???");
+    console.log("???");
 }
 
 setInterval(function() {
