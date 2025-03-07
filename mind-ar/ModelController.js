@@ -7,7 +7,7 @@ setInterval(function() {
         const Model = Models[i];
         if (Model.hasAttribute("rotation")) {
             let NewValue = Milliseconds / 1000 * 360;
-            var NewRotation = "90 0 ".concat(NewValue);
+            var NewRotation = "0 0 ".concat(NewValue);
             console.log(NewRotation);
             Model.setAttribute("rotation", NewRotation);
         }
