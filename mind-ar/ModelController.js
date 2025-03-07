@@ -8,7 +8,7 @@ setInterval(function() {
         if (Model.hasAttribute("position")) {
             let NewValue = Milliseconds / 1000 * 100;
             var NewPosition = "0 ".concat(NewValue, " ", NewValue);
-            Model.setAttribute("rotation", NewRotation);
+            Model.setAttribute("position", NewPosition);
         }
     }
 }, 20);
