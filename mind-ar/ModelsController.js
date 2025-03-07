@@ -7,7 +7,8 @@ setInterval(function() {
         const Model = Models[i];
         if (Model.hasAttribute("position")) {
             let NewValue = Milliseconds / 1000 * 100;
-            var NewPosition = "0 ".concat(NewValue, " ", NewValue);
+            var NewPosition = "0 ".concat(NewValue, " ", -NewValue);
+            console.log(NewPosition)
             Model.setAttribute("position", NewPosition);
         }
     }
