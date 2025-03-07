@@ -10,7 +10,6 @@ setInterval(function() {
         if (Model.hasAttribute("rotation")) {
             let NewValue = Math.sin(Milliseconds / 500 * Math.PI)
             var NewRotation = "90 ".concat(NewValue, " 0");
-            console.log(NewRotation)
             Model.setAttribute("rotation", NewRotation);
         }
     }
