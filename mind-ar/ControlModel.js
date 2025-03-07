@@ -3,6 +3,7 @@ const Models = document.getElementsByClassName("Model");
 
 setInterval(function() {
     var Milliseconds = new Date().getMilliseconds();
+    console.log(Models.length)
     //Models.forEach(UpdateRotation);
     for (let i = 0; i < Models.length; i++) {
         const Model = Models[i];
