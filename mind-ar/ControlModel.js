@@ -1,14 +1,8 @@
 console.log("hello");
 const Models = document.getElementsByClassName("Model");
-console.log(Models.length);
-const test = document.getElementById("BuildingModel");
-if (test == null) {
-    console.log("oh no");
-} else {
-    console.log("???");
-}
 
 setInterval(function() {
+    console.log(Models.length);
     var Milliseconds = new Date().getMilliseconds();
     //Models.forEach(UpdateRotation);
     for (let i = 0; i < Models.length; i++) {
