@@ -1,11 +1,13 @@
-const Date = new Date();
-print("hello")
+console.log("hello")
 let Models = document.getElementsByClassName("Model");
 
-Models.forEach(Model => {
-    if (Model.hasAttribute("rotation")) {
-        let NewValue = Date.getMilliseconds();
-        var NewRotation = "90 ".concat(NewValue, " 0");
-        Model.setAttribute("rotation", NewRotation);
-    }
-});
+setInterval(function() {
+    var Milliseconds = new Date().getMilliseconds();
+    Models.forEach(Model => {
+        if (Model.hasAttribute("rotation")) {
+            let NewValue = Math.sin(Milliseconds / 500 * Math.PI)
+            var NewRotation = "90 ".concat(NewValue, " 0");
+            Model.setAttribute("rotation", NewRotation);
+        }
+    });
+}, 20);
