@@ -2,7 +2,6 @@ console.log("hello");
 const Models = document.getElementsByClassName("Model");
 
 setInterval(function() {
-    console.log(Models.length);
     var Milliseconds = new Date().getMilliseconds();
     //Models.forEach(UpdateRotation);
     for (let i = 0; i < Models.length; i++) {
@@ -10,6 +9,7 @@ setInterval(function() {
         if (Model.hasAttribute("rotation")) {
             let NewValue = Math.sin(Milliseconds / 500 * Math.PI);
             var NewRotation = "90 ".concat(NewValue, " 0");
+            console.log(NewRotation);
             Model.setAttribute("rotation", NewRotation);
         }
     }
