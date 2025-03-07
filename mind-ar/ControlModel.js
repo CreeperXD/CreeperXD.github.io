@@ -1,6 +1,12 @@
-console.log("hello")
+console.log("hello");
 const Models = document.getElementsByClassName("Model");
-console.log(Models.length)
+console.log(Models.length);
+const test = document.getElementById("BuildingModel");
+if (test == null) {
+    print("oh no");
+} else {
+    print("???");
+}
 
 setInterval(function() {
     var Milliseconds = new Date().getMilliseconds();
@@ -8,7 +14,7 @@ setInterval(function() {
     for (let i = 0; i < Models.length; i++) {
         const Model = Models[i];
         if (Model.hasAttribute("rotation")) {
-            let NewValue = Math.sin(Milliseconds / 500 * Math.PI)
+            let NewValue = Math.sin(Milliseconds / 500 * Math.PI);
             var NewRotation = "90 ".concat(NewValue, " 0");
             Model.setAttribute("rotation", NewRotation);
         }
