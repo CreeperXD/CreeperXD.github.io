@@ -1,5 +1,5 @@
 console.log("hello")
-let Models = document.getElementsByClassName("Model");
+const Models = document.getElementsByClassName("Model");
 
 setInterval(function() {
     Models.forEach(UpdateRotation);
