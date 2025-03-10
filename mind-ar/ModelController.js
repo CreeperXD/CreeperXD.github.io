@@ -2,7 +2,7 @@ console.log("hello");
 
 const CarModel1s = document.getElementsByClassName("CarModel1");
 const CarModel2s = document.getElementsByClassName("CarModel2");
-const TimeScale = 1
+const TimeScale = 0.5
 
 var DeltaTime = Date.now()
 var CurrentTime = 0
@@ -10,7 +10,7 @@ var CurrentTime = 0
 setInterval(function() {
     DeltaTime = Date.now() - DeltaTime;
     CurrentTime += DeltaTime * TimeScale;
-    print(CurrentTime)
+    console.log(CurrentTime)
 
     for (let i = 0; i < CarModel1s.length; i++) {
         const Model = CarModel1s[i];
