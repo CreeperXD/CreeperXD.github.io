@@ -4,19 +4,20 @@ const CarModel1s = document.getElementsByClassName("CarModel1");
 const CarModel2s = document.getElementsByClassName("CarModel2");
 const TimeScale = 1
 
-var DeltaTime = 0
+var DeltaTime = Date.now()
 var CurrentTime = 0
 
 setInterval(function() {
     DeltaTime = Date.now() - DeltaTime;
     CurrentTime += DeltaTime * TimeScale;
+    print(CurrentTime)
 
     for (let i = 0; i < CarModel1s.length; i++) {
         const Model = CarModel1s[i];
         if (Model.hasAttribute("rotation")) {
             let NewValue = (CurrentTime % 1000) / 1000 * 360;
-            var NewRotation = "90 ".concat(NewValue, " 0");
-            console.log(NewRotation)
+            var NewRotation = "".concat(NewValue, " ", NewValue, " 0");
+            //console.log(NewRotation)
             Model.setAttribute("rotation", NewRotation);
         }
     }
@@ -25,8 +26,8 @@ setInterval(function() {
         const Model = CarModel2s[i];
         if (Model.hasAttribute("rotation")) {
             let NewValue = (CurrentTime % 1000) / 1000 * 360;
-            var NewRotation = "90 0 ".concat(NewValue);
-            console.log(NewRotation)
+            var NewRotation = "".concat(NewValue, " 0 ", NewValue);
+            //console.log(NewRotation)
             Model.setAttribute("rotation", NewRotation);
         }
     }
