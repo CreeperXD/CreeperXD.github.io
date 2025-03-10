@@ -1,15 +1,15 @@
 console.log("hello");
 
-const CarModel1 = document.getElementsById("CarModel1");
-const CarModel2 = document.getElementsById("CarModel2");
-const CarModel3 = document.getElementsById("CarModel3");
-const CarModel4 = document.getElementsById("CarModel4");
-const CarModel5 = document.getElementsById("CarModel5");
-const CarModel6 = document.getElementsById("CarModel6");
-const CarModel7 = document.getElementsById("CarModel7");
-const CarModel8 = document.getElementsById("CarModel8");
-const CarModel9 = document.getElementsById("CarModel9");
-const CarModel10 = document.getElementsById("CarModel10");
+const CarModel1 = document.getElementById("CarModel1");
+const CarModel2 = document.getElementById("CarModel2");
+const CarModel3 = document.getElementById("CarModel3");
+const CarModel4 = document.getElementById("CarModel4");
+const CarModel5 = document.getElementById("CarModel5");
+const CarModel6 = document.getElementById("CarModel6");
+const CarModel7 = document.getElementById("CarModel7");
+const CarModel8 = document.getElementById("CarModel8");
+const CarModel9 = document.getElementById("CarModel9");
+const CarModel10 = document.getElementById("CarModel10");
 
 const TimeScale = 1
 
