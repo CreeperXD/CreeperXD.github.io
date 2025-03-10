@@ -14,9 +14,9 @@ setInterval(function() {
     for (let i = 0; i < CarModel1s.length; i++) {
         const Model = CarModel1s[i];
         if (Model.hasAttribute("rotation")) {
-            let NewValue = GetFractionalPart(CurrentTime / 1000) * 360;
+            let NewValue = GetFractionalPart(CurrentTime) * 360;
             let NewRotation = "".concat(NewValue, " ", NewValue, " 0");
-            //console.log(NewRotation)
+            console.log(NewRotation)
             Model.setAttribute("rotation", NewRotation);
         }
     }
@@ -24,9 +24,9 @@ setInterval(function() {
     for (let i = 0; i < CarModel2s.length; i++) {
         const Model = CarModel2s[i];
         if (Model.hasAttribute("rotation")) {
-            let NewValue = GetFractionalPart(CurrentTime / 1000) * 360;
+            let NewValue = GetFractionalPart(CurrentTime) * 360;
             let NewRotation = "".concat(NewValue, " 0 ", NewValue);
-            //console.log(NewRotation)
+            console.log(NewRotation)
             Model.setAttribute("rotation", NewRotation);
         }
     }
@@ -37,7 +37,7 @@ function UpdateTime() {
     DeltaSeconds = CurrentSeconds - LastUpdatedSeconds;
     LastUpdatedSeconds = CurrentSeconds;
     CurrentTime += DeltaSeconds * TimeScale;
-    console.log(CurrentTime);
+    //console.log(CurrentTime);
 }
 
 function MillisecondsToSeconds(Milliseconds) {
