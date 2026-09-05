@@ -94,10 +94,10 @@ select {
   }
 }
 
-:focus {
+/* :focus {
   outline: 2px dashed #00ff19;
   outline-offset: 0.25rem;
-}
+} */
 
 /* :focus-within {
   color: #007bff;
@@ -235,6 +235,9 @@ h5,
 
 header {
   padding: var(--space-s) 0;
+  /* position: sticky;
+  top: 0; */
+  background-color: #003200;
 }
 
 .site_header_nav ul li a {
