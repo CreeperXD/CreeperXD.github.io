@@ -246,6 +246,11 @@ header {
   margin: auto 25px;
 }
 
+.ContactImage {
+  width: 50px;
+  height: auto;
+}
+
 
 /* General styling for sections */
 
@@ -256,7 +261,7 @@ section {
 
 /* Hero section styling */
 
-.hero_content {
+/* .hero_content {
   padding: var(--space-3xl) 0;
 }
 
@@ -266,7 +271,7 @@ section {
 
 .hero_social {
   padding-top: var(--space-3xl);
-}
+} */
 
 
 /* section#hero {
@@ -337,10 +342,18 @@ a.ProjectLink div {
   background-color: yellow;
 }
 
+button.ProjectsShowcaseButton:hover {
+  background-color: gray;
+}
+
+button.ProjectsShowcaseButton.SelectedButton {
+  background-color: red;
+}
+
 
 /* Contact section */
 
-section#contact {
+/* section#contact {
   color: #e6e6fa;
   accent-color: #ff4500;
 }
@@ -354,11 +367,6 @@ section#contact {
 .form_group {
   display: flex;
   flex-direction: column;
-}
-
-.ContactImage {
-  width: 50px;
-  height: auto;
 }
 
 label {
@@ -393,7 +401,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
-}
+} */
 
 
 /* Footer section */
