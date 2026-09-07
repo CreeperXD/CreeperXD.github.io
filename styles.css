@@ -323,23 +323,27 @@ section#about {
 }
 
 
-/* Work section */
+/* Projects section */
 
-.work_logos {
-  margin-top: var(--space-xl);
-}
-
-section#work {
+section#projects {
   color: #0c0c0c;
   accent-color: #2e8b57;
 }
 
 a.ProjectLink {
   text-decoration: none;
+  color: red;
 }
 
-a.ProjectLink div {
+a.ProjectLink div img {
+  width: 200px;
+  height: auto;
+}
+
+div.ProjectLinkBackground {
   background-color: yellow;
+  /* display: flex;
+  align-items: center; */
 }
 
 button.ProjectsShowcaseButton:hover {
