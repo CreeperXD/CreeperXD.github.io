@@ -10,28 +10,32 @@ function ValueIsInEnum(Value, Enum) {
 }
 
 class Project {
-    constructor(Name, ShortDescription, Type, ProudOfThis, Link) {
+    constructor(Name, ShortDescription, ImageLink, Type, ProudOfThis, PageLink) {
         if (typeof(Name) !== "string") {
             throw new TypeError(Name + " is not a string");
         }
         if (typeof(ShortDescription) !== "string") {
             throw new TypeError(ShortDescription + " is not a string");
         }
-        if (!Object.values(ProjectType).includes(Type)) {
+        if (typeof(ImageLink) !== "string") {
+            throw new TypeError(ImageLink + " is not a string");
+        }
+        if (!ValueIsInEnum(Type, ProjectType)) {
             throw new TypeError(Type + " is not a ProjectType");
         }
         if (typeof(ProudOfThis) !== "boolean") {
             throw new TypeError(ProudOfThis + " is not a boolean");
         }
-        if (typeof(Link) !== "string") {
-            throw new TypeError(Link + " is not a string");
+        if (typeof(PageLink) !== "string") {
+            throw new TypeError(PageLink + " is not a string");
         }
 
         this.Name = Name;
         this.ShortDescription = ShortDescription;
+        this.ImageLink = ImageLink;
         this.Type = Type;
         this.ProudOfThis = ProudOfThis
-        this.Link = Link;
+        this.PageLink = PageLink;
     }
 }
 
@@ -41,9 +45,9 @@ const ProjectType = Object.freeze({
 });
 
 const ProjectsList = [
-    new Project("game1", "test description1", ProjectType.GAME, true, "#"),
-    new Project("notgame1", "test description2", ProjectType.NOT_GAME, true, "#"),
-    new Project("game2", "test description3", ProjectType.GAME, false, "#"),
+    new Project("game1", "test description1", "assets/images/EmailLogo.png", ProjectType.GAME, true, "#"),
+    new Project("notgame1", "test description2", "assets/images/EmailLogo.png", ProjectType.NOT_GAME, true, "#"),
+    new Project("game2", "test description3", "assets/images/EmailLogo.png", ProjectType.GAME, false, "#"),
 ]
 // end of code for local test only
 
@@ -74,17 +78,25 @@ function AddProjectLink(AddedProject) {
     }
 
     let AnchorElement = document.createElement("a");
-    let DivElement = document.createElement("div");
-    let H6Element = document.createElement("h6");
+    let ContainerDivElement = document.createElement("div");
+    let ImageElement = document.createElement("img");
+    let TextDivElement = document.createElement("div");
+    let H4Element = document.createElement("h4");
     let ParagraphElement = document.createElement("p");
 
-    H6Element.innerText = AddedProject.Name;
+    H4Element.innerText = AddedProject.Name;
     ParagraphElement.innerText = AddedProject.ShortDescription;
 
-    DivElement.appendChild(H6Element);
-    DivElement.appendChild(ParagraphElement);
+    TextDivElement.appendChild(H4Element);
+    TextDivElement.appendChild(ParagraphElement);
 
-    AnchorElement.appendChild(DivElement);
+    ImageElement.src = AddedProject.ImageLink;
+    
+    ContainerDivElement.appendChild(ImageElement);
+    ContainerDivElement.appendChild(TextDivElement);
+    ContainerDivElement.classList.add("ProjectLinkContainer", "flex");
+
+    AnchorElement.appendChild(ContainerDivElement);
     AnchorElement.classList.add("ProjectLink");
     if (AddedProject.ProudOfThis) {
         AnchorElement.classList.add(ProjectCategory.PROUD_OF_THIS);
@@ -100,7 +112,7 @@ function AddProjectLink(AddedProject) {
             console.log("Challenge complete! How did we get here?");
             break;
     }
-    AnchorElement.href = AddedProject.Link;
+    AnchorElement.href = AddedProject.PageLink;
 
     ProjectLinksContainer.appendChild(AnchorElement);
 }

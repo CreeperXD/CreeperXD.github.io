@@ -332,19 +332,33 @@ section#projects {
 
 a.ProjectLink {
   text-decoration: none;
-  color: red;
+  margin: 25px;
 }
 
-a.ProjectLink div img {
+div.ProjectLinkContainer {
+  background-color: yellow;
+}
+
+div.ProjectLinkContainer div {
+  background-color: aliceblue;
+  margin: 25px;
+}
+
+div.ProjectLinkContainer img {
   width: 200px;
   height: auto;
+  background-color: black;
 }
 
-div.ProjectLinkBackground {
-  background-color: yellow;
-  /* display: flex;
-  align-items: center; */
+div.ProjectLinkContainer h4 {
+  margin-bottom: 25px;
+  background-color: antiquewhite;
 }
+
+div.ProjectLinkContainer p {
+  background-color: aqua;
+}
+
 
 button.ProjectsShowcaseButton:hover {
   background-color: gray;
