@@ -288,7 +288,7 @@ section {
 
 /* About section */
 
-.about_content {
+/* .about_content {
   padding: var(--space-xl) 0;
   transform: skewX(-10deg);
 }
@@ -315,7 +315,7 @@ section {
 
 .about_caption {
   padding: var(--space-3xs) 0;
-}
+} */
 
 section#about {
   color: #333;
@@ -333,6 +333,10 @@ section#projects {
 a.ProjectLink {
   text-decoration: none;
   margin: 25px;
+}
+
+div#ProjectLinksContainer {
+  background-color: #ffd700;
 }
 
 div.ProjectLinkContainer {
