@@ -5,12 +5,12 @@
 */
 
 
-/* Box sizing rules */
+/* Entire document */
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* include padding and border in calculation of width and height */
   font-family: sans-serif;
 }
 
@@ -43,7 +43,8 @@ ol[role="list"] {
 /* Set core root defaults */
 
 html {
-  background-color: #2e8b57;
+  background-color: rgb(0, 100, 0);
+  color: rgb(0, 200, 0);
 }
 
 html:focus-within {
@@ -62,8 +63,17 @@ body {
 
 /* All elements that don't have a class get default styles */
 
-a:not([class]) {
+/* a:not([class]) {
   text-decoration-skip-ink: auto;
+} */
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #00ff00;
 }
 
 
@@ -237,53 +247,35 @@ header {
   padding: var(--space-s) 0;
   /* position: sticky;
   top: 0; */
-  background-color: #003200;
+  background-color: rgb(0, 50, 0);
 }
 
-.site_header_nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  margin: auto 25px;
+#HeaderNav {
+  margin: 0 25px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ContactImage {
   width: 50px;
-  height: auto;
+  height: 50px;
+}
+
+.ContactImage:hover {
+  filter:
+    /* Turn the image colour to black */
+    brightness(0) saturate(100%)
+    /* Turn the image colour to #00ff00 */
+    /* Generated using https://codepen.io/sosuke/pen/Pjoqqp */
+    invert(65%) sepia(93%) saturate(3659%) hue-rotate(82deg) brightness(119%) contrast(122%);
 }
 
 
 /* General styling for sections */
 
 section {
-  padding: var(--space-2xl) var(--space-l);
+  padding: var(--space-l) var(--space-m);
 }
-
-
-/* Hero section styling */
-
-/* .hero_content {
-  padding: var(--space-3xl) 0;
-}
-
-.hero_content h1 {
-  margin-bottom: var(--space-s);
-}
-
-.hero_social {
-  padding-top: var(--space-3xl);
-} */
-
-
-/* section#hero {
-  background: linear-gradient(rgba(26, 26, 64, 0.9), rgba(26, 26, 64, 0.9)),
-    url("assets/icons/GitHub_Lockup_Black.svg");
-  padding-bottom: 4px;
-  background-size: cover;
-  background-position: top;
-  background-attachment: scroll;
-  color: #fafafa;
-  accent-color: #8a2be2;
-} */
 
 
 /* About section */
@@ -318,34 +310,37 @@ section {
 } */
 
 section#about {
-  color: #333;
   accent-color: #ffd700;
 }
 
 
 /* Projects section */
 
-section#projects {
+/* section#projects {
   color: #0c0c0c;
-  accent-color: #2e8b57;
-}
+} */
 
 a.ProjectLink {
   text-decoration: none;
   margin: 25px;
+  color:rgb(0, 50, 0);
 }
 
-div#ProjectLinksContainer {
+/* div#ProjectLinksContainer {
   background-color: #ffd700;
-}
+} */
 
 div.ProjectLinkContainer {
-  background-color: yellow;
+  background-color: white;
+}
+
+div.ProjectLinkContainer:hover {
+  background-color: #00ff00;
 }
 
 div.ProjectLinkContainer div {
-  background-color: aliceblue;
   margin: 25px;
+  flex: 1;
 }
 
 div.ProjectLinkContainer img {
@@ -356,20 +351,19 @@ div.ProjectLinkContainer img {
 
 div.ProjectLinkContainer h4 {
   margin-bottom: 25px;
-  background-color: antiquewhite;
 }
 
-div.ProjectLinkContainer p {
-  background-color: aqua;
+button.ProjectsShowcaseButton {
+  background-color: white;
+  color: rgb(0, 50, 0);
 }
-
 
 button.ProjectsShowcaseButton:hover {
-  background-color: gray;
+  background-color: #00ff00;
 }
 
 button.ProjectsShowcaseButton.SelectedButton {
-  background-color: red;
+  background-color: rgb(0, 200, 0);
 }
 
 
@@ -428,7 +422,6 @@ button[type="submit"]:hover {
 
 /* Footer section */
 footer {
-  color: #fafafa;
-  accent-color: #8a2be2;
+  background-color: rgb(0, 50, 0);
   padding: var(--space-l) var(--space-l);
 }
