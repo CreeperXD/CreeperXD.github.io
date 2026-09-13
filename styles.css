@@ -18,15 +18,8 @@
 /* Remove default margin */
 
 body,
-h1,
-h2,
-h3,
-h4,
 p,
-figure,
-blockquote,
-dl,
-dd {
+figure {
   margin: 0;
 }
 
@@ -113,6 +106,9 @@ select {
   color: #007bff;
 } */
 
+main {
+  text-align: center;
+}
 
 main:focus {
   outline: none;
@@ -149,7 +145,7 @@ main:focus {
 
 /* Headings */
 
-h1,
+/* h1,
 .h1 {
   font-size: var(--step-5);
 }
@@ -172,7 +168,7 @@ h4,
 h5,
 .h5 {
   font-size: var(--step-1);
-}
+} */
 
 
 /* Define some constants */
@@ -234,13 +230,6 @@ h5,
   margin: 0 auto;
 }
 
-.wrapper_inner {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
 /* Style the header */
 
 header {
@@ -250,7 +239,7 @@ header {
   background-color: rgb(0, 50, 0);
 }
 
-#HeaderNav {
+nav#HeaderNav {
   margin: 0 25px;
   display: flex;
   justify-content: space-between;
@@ -273,9 +262,9 @@ header {
 
 /* General styling for sections */
 
-section {
+/* section {
   padding: var(--space-l) var(--space-m);
-}
+} */
 
 
 /* About section */
@@ -309,8 +298,8 @@ section {
   padding: var(--space-3xs) 0;
 } */
 
-section#about {
-  accent-color: #ffd700;
+#SelfIntroductionHeader {
+  margin: 50px;
 }
 
 
@@ -320,17 +309,46 @@ section#about {
   color: #0c0c0c;
 } */
 
+
+div#ProjectsShowcaseButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 25px;
+}
+
+button.ProjectsShowcaseButton {
+  width: 150px;
+  height: 75px;
+  border: 0px;
+  background-color: white;
+  color: rgb(0, 50, 0);
+  font-size: large;
+}
+
+button.ProjectsShowcaseButton:hover {
+  background-color: #00ff00;
+}
+
+button.ProjectsShowcaseButton.SelectedButton {
+  background-color: rgb(0, 200, 0);
+}
+
+div#ProjectLinksContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 25px auto;
+}
+
 a.ProjectLink {
-  text-decoration: none;
   margin: 25px;
   color:rgb(0, 50, 0);
 }
 
-/* div#ProjectLinksContainer {
-  background-color: #ffd700;
-} */
-
 div.ProjectLinkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   background-color: white;
 }
 
@@ -346,24 +364,11 @@ div.ProjectLinkContainer div {
 div.ProjectLinkContainer img {
   width: 200px;
   height: auto;
-  background-color: black;
+  background-color: rgb(0, 50, 0); /* If the image has transparency*/
 }
 
-div.ProjectLinkContainer h4 {
-  margin-bottom: 25px;
-}
-
-button.ProjectsShowcaseButton {
-  background-color: white;
-  color: rgb(0, 50, 0);
-}
-
-button.ProjectsShowcaseButton:hover {
-  background-color: #00ff00;
-}
-
-button.ProjectsShowcaseButton.SelectedButton {
-  background-color: rgb(0, 200, 0);
+div.ProjectLinkContainer h3 {
+  margin: 0px 0px 25px 0px;
 }
 
 
@@ -424,4 +429,7 @@ button[type="submit"]:hover {
 footer {
   background-color: rgb(0, 50, 0);
   padding: var(--space-l) var(--space-l);
+  display: flex;
+  justify-content: space-between;
 }
+

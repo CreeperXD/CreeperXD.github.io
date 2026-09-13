@@ -11,64 +11,51 @@
     </head>
     <body>
         <header>
-            <div class="wrapper">
-                <nav id="HeaderNav" class="flex">
-                    <a href="#">
-                        <h1>CreeperXD</h1>
-                        <!-- <h5>Aspiring video game developer</h5> -->
-                    </a>
-                    <ul role="list" class="flex">
-                        <li><a href="https://creeperxd.itch.io" target="_blank" rel="noopener noreferrer">
-                            <img class="ContactImage" src="assets/images/itch/logos/itchio-logo-textless-white.svg">
-                        </a></li>
-                        <li><a href="https://github.com/CreeperXD" target="_blank" rel="noopener noreferrer">
-                            <img class="ContactImage" src="assets/images/github/GitHub_Invertocat_White_Clearspace.svg">
-                        </a></li>
-                        <li><a href="mailto:ngkhengshin@gmail.com">
-                            <img class="ContactImage" src="assets/images/EmailLogo.png">
-                        </a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav id="HeaderNav" class="flex">
+                <a href="./index.html">
+                    <h1>CreeperXD</h1>
+                    <!-- <h5>Aspiring video game developer</h5> -->
+                </a>
+                <ul role="list" class="flex">
+                    <li><a href="https://creeperxd.itch.io" target="_blank" rel="noopener noreferrer">
+                        <img class="ContactImage" src="assets/images/itch/logos/itchio-logo-textless-white.svg">
+                    </a></li>
+                    <li><a href="https://github.com/CreeperXD" target="_blank" rel="noopener noreferrer">
+                        <img class="ContactImage" src="assets/images/github/GitHub_Invertocat_White_Clearspace.svg">
+                    </a></li>
+                    <li><a href="mailto:ngkhengshin@gmail.com">
+                        <img class="ContactImage" src="assets/images/EmailLogo.png">
+                    </a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <section id="about">
-                <div class="wrapper">
-                    <h5 class="text_center">
-                        My name is Ng Kheng Shin. I make video games and things that help me make video games.
-                    </h5>
-                </div>
-            </section>
-            <section id="projects">
-                <div class="wrapper">
-                    <div class="text_center">
-                        <h2>My projects</h2>
-                        <noscript>JavaScript is required to make these buttons work.</noscript>
-                        <button id="ProudOfThese" class="ProjectsShowcaseButton">Proud of these</button>
-                        <button id="Games" class="ProjectsShowcaseButton">Games</button>
-                        <button id="Not-games" class="ProjectsShowcaseButton">Not-games</button>
-                        <div id="ProjectLinksContainer" class="wrapper_inner">
-                            <!-- <a href="#" id="ProjectLinkTemplate" class="ProjectLink ProudOfThisProject">
-                                <div class="ProjectLinkContainer flex">
-                                    <img src="assets/images/EmailLogo.png">
-                                    <div class="text_center">
-                                        <h4>template title</h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
-                                    </div>
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <h2 id="SelfIntroductionHeader">
+                My name is Ng Kheng Shin. I make video games and things that help me make video games.<br>
+                Have a look at what I have made below.
+            </h2>
+            <noscript>JavaScript is required to make these buttons work.</noscript>
+            <div id="ProjectsShowcaseButtonContainer">
+                <button id="ProudOfThese" class="ProjectsShowcaseButton">Proud of these</button>
+                <button id="Games" class="ProjectsShowcaseButton">Games</button>
+                <button id="Not-games" class="ProjectsShowcaseButton">Not-games</button>
+            </div>
+            <div id="ProjectLinksContainer">
+                <!-- <a href="#" id="ProjectLinkTemplate" class="ProjectLink ProudOfThisProject"> -->
+                    <!-- For some reason anchor element cannot set background colour, so using a div for background -->
+                    <!-- <div class="ProjectLinkContainer"> -->
+                        <!-- <img src="assets/images/EmailLogo.png"> -->
+                        <!-- <div> -->
+                            <!-- <h3>template title</h3> -->
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </a> -->
+            </div>
         </main>
         <footer>
-            <div class="wrapper" style="display: flex; justify-content: space-between;">
-                <p>Last updated on 19:15, 11 September 2026.</p>
-                <p>© 2026 CreeperXD. All rights reserved.</p>
-            </div>
+            <p>Last updated on 19:15, 11 September 2026.</p>
+            <p>© 2026 CreeperXD. All rights reserved.</p>
         </footer>
     </body>
 </html>

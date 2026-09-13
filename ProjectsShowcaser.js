@@ -89,20 +89,20 @@ function AddProjectLink(AddedProject) {
     let ContainerDivElement = document.createElement("div");
     let ImageElement = document.createElement("img");
     let TextDivElement = document.createElement("div");
-    let H4Element = document.createElement("h4");
+    let H3Element = document.createElement("h3");
     let ParagraphElement = document.createElement("p");
 
-    H4Element.innerText = AddedProject.Name;
+    H3Element.innerText = AddedProject.Name;
     ParagraphElement.innerText = AddedProject.ShortDescription;
 
-    TextDivElement.appendChild(H4Element);
+    TextDivElement.appendChild(H3Element);
     TextDivElement.appendChild(ParagraphElement);
 
     ImageElement.src = AddedProject.ImageLink;
     
     ContainerDivElement.appendChild(ImageElement);
     ContainerDivElement.appendChild(TextDivElement);
-    ContainerDivElement.classList.add("ProjectLinkContainer", "flex");
+    ContainerDivElement.classList.add("ProjectLinkContainer");
 
     AnchorElement.appendChild(ContainerDivElement);
     AnchorElement.classList.add("ProjectLink");
