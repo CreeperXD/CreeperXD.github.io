@@ -1,63 +1,6 @@
-// For proper test of modules need to deploy to github pages first
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#troubleshooting
-
-// import Project, {ProjectType} from "./Project.js";
-// import ProjectsList from "./ProjectsList.js";
-// import ValueIsInEnum from "./ValueIsInEnum.js";
-// start of code for local test only
-function ValueIsInEnum(Value, Enum) {
-    return Object.values(Enum).includes(Value);
-}
-
-class Project {
-    constructor(Name, ShortDescription, ImageLink, Type, ProudOfThis, PageLink) {
-        if (typeof(Name) !== "string") {
-            throw new TypeError(Name + " is not a string");
-        }
-        if (typeof(ShortDescription) !== "string") {
-            throw new TypeError(ShortDescription + " is not a string");
-        }
-        if (typeof(ImageLink) !== "string") {
-            throw new TypeError(ImageLink + " is not a string");
-        }
-        if (!ValueIsInEnum(Type, ProjectType)) {
-            throw new TypeError(Type + " is not a ProjectType");
-        }
-        if (typeof(ProudOfThis) !== "boolean") {
-            throw new TypeError(ProudOfThis + " is not a boolean");
-        }
-        if (typeof(PageLink) !== "string") {
-            throw new TypeError(PageLink + " is not a string");
-        }
-
-        this.Name = Name;
-        this.ShortDescription = ShortDescription;
-        this.ImageLink = ImageLink;
-        this.Type = Type;
-        this.ProudOfThis = ProudOfThis
-        this.PageLink = PageLink;
-    }
-}
-
-const ProjectType = Object.freeze({
-    GAME: "Game",
-    NOT_GAME: "Not-game"
-});
-
-const ProjectsList = [
-    new Project("game1", "test description1", "assets/images/EmailLogo.png", ProjectType.GAME, true, "#"),
-    new Project("notgame1", "test description2", "assets/images/EmailLogo.png", ProjectType.NOT_GAME, true, "#"),
-    new Project("game2", "test description3", "assets/images/EmailLogo.png", ProjectType.GAME, false, "#"),
-    new Project(
-        "Shiplogging",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
-        ProjectType.GAME,
-        true,
-        "./projects/Shiplogging.html"
-    )
-]
-// end of code for local test only
+import Project, {ProjectType} from "./Project.js";
+import ProjectsList from "./ProjectsList.js";
+import ValueIsInEnum from "./ValueIsInEnum.js";
 
 
 
@@ -73,7 +16,7 @@ const ProjectCategory = Object.freeze({
 const ProudOfTheseButton = document.getElementById("ProudOfThese");
 const GamesButton = document.getElementById("Games");
 const NotGamesButton = document.getElementById("Not-games");
-const ProjectCategoryButtons = [ProudOfTheseButton, GamesButton, NotGamesButton];
+const ProjectShowcaseButtons = [ProudOfTheseButton, GamesButton, NotGamesButton];
 const SelectedButtonClassString = "SelectedButton";
 
 const ProjectLinksContainer = document.getElementById("ProjectLinksContainer");
@@ -138,7 +81,7 @@ function ShowRelevantProjects(Category) {
 
 
 function HighlightClickedButton(ClickedButton) {
-   ProjectCategoryButtons.forEach(Button => {
+   ProjectShowcaseButtons.forEach(Button => {
         if (Button === ClickedButton) {
             Button.classList.add(SelectedButtonClassString);
         } else {
@@ -176,12 +119,11 @@ function OnNotGamesButtonClicked() {
 
 
 
-console.log("hi");
-
 RegisterOnClickEvent(ProudOfTheseButton, OnProudOfTheseButtonClicked);
 RegisterOnClickEvent(GamesButton, OnGamesButtonClicked);
 RegisterOnClickEvent(NotGamesButton, OnNotGamesButtonClicked);
 
+ProjectLinksContainer.innerHTML = "";
 ProjectsList.forEach(AvailableProject => {
     AddProjectLink(AvailableProject);
 });
