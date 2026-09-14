@@ -39,6 +39,7 @@ button {
 
 main {
   text-align: center;
+  min-height: 100vh; /* If there is too little content, the footer is not at the bottom if the viewpoer height is large */
 }
 
 
