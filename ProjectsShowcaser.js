@@ -40,6 +40,7 @@ function AddProjectLink(AddedProject) {
 
     TextDivElement.appendChild(H3Element);
     TextDivElement.appendChild(ParagraphElement);
+    TextDivElement.classList.add("ProjectTextContainer");
 
     ImageElement.src = AddedProject.ImageLink;
     

@@ -5,13 +5,11 @@
 }
 
 html {
-  background-color: rgb(0, 100, 0);
+  background-color: rgb(0, 50, 0);
   color: rgb(0, 200, 0);
 }
 
-/* Remove default margin */
-body,
-p {
+body {
   margin: 0;
 }
 
@@ -50,7 +48,7 @@ figure {
 
 header {
   padding: 25px;
-  background-color: rgb(0, 50, 0);
+  background-color: rgb(0, 25, 0);
   /* Uncomment below 2 lines if I want the header to always be visible */
   /* position: sticky;
   top: 0; */
@@ -106,7 +104,7 @@ button.ProjectsShowcaseButton {
   height: 75px;
   border: none;
   background-color: white;
-  color: rgb(0, 50, 0);
+  color: rgb(0, 100, 0);
   font-size: large;
 }
 
@@ -125,7 +123,7 @@ div#ProjectLinksContainer {
 
 a.ProjectLink {
   margin: 25px;
-  color:rgb(0, 50, 0);
+  color:rgb(0, 100, 0);
 }
 
 div.ProjectLinkContainer {
@@ -139,26 +137,30 @@ div.ProjectLinkContainer:hover {
   background-color: #00ff00;
 }
 
-div.ProjectLinkContainer div {
-  margin: 25px;
+div.ProjectLinkContainer img {
+  width: 25%;
+  background-color: rgb(0, 100, 0);
+  border: 5px, solid, rgb(0, 100, 0);
+}
+
+div.ProjectTextContainer {
+  padding: 25px;
   flex: 1;
 }
 
-div.ProjectLinkContainer img {
-  width: 200px;
-  height: auto;
-  background-color: rgb(0, 50, 0); /* If the image has transparency */
+div.ProjectTextContainer h3 {
+  margin: 0px 0px 25px 0px;
 }
 
-div.ProjectLinkContainer h3 {
-  margin: 0px 0px 25px 0px;
+div.ProjectTextContainer p {
+  margin: 0;
 }
 
 
 /* Footer */
 
 footer {
-  background-color: rgb(0, 50, 0);
+  background-color: rgb(0, 25, 0);
   padding: 25px;
   display: flex;
   justify-content: space-between;
