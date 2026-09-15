@@ -21,4 +21,4 @@ async function LoadFooter() {
 window.addEventListener("load", () => {
     LoadHeader();
     LoadFooter();
-});   
+});
