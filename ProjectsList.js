@@ -77,8 +77,8 @@ const ProjectsList = [
     ),
     new Project(
         "Godot dialogue system",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "A simple dialogue system for Godot with just 2 data structures and a HUD.",
+        "assets/images/Godot dialogue system/thumbnail.png",
         ProjectType.NOT_GAME,
         true,
         "projects/Godot dialogue system.html"
