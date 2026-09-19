@@ -46,7 +46,7 @@ const ProjectsList = [
     new Project(
         "Godot stat bar",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Godot stat bar/thumbnail.png",
         ProjectType.NOT_GAME,
         true,
         "projects/Godot stat bar.html"
@@ -54,7 +54,7 @@ const ProjectsList = [
     new Project(
         "Godot 3D character controller",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Godot 3D character controller/thumbnail.png",
         ProjectType.NOT_GAME,
         true,
         "projects/Godot 3D character controller.html"
@@ -70,7 +70,7 @@ const ProjectsList = [
     new Project(
         "Godot project template",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/godot_icon.svg",
         ProjectType.NOT_GAME,
         true,
         "projects/Godot project template.html"
@@ -94,7 +94,7 @@ const ProjectsList = [
     new Project(
         "GoGoDino Fun Zone",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/GoGoDino Fun Zone/icon.webp",
         ProjectType.GAME,
         true,
         "projects/GoGoDino Fun Zone.html"
@@ -102,7 +102,7 @@ const ProjectsList = [
     new Project(
         "WebAR Model Displayer",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/WebAR Model Displayer/thumbnail.jpeg",
         ProjectType.NOT_GAME,
         false,
         "projects/WebAR Model Displayer.html"
