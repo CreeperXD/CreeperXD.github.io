@@ -6,7 +6,7 @@ const ProjectsList = [
     new Project(
         "laksa mana?",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/laksa mana/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/laksa mana?.html"
@@ -14,7 +14,7 @@ const ProjectsList = [
     new Project(
         "Done Deals",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Done Deals/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/Done Deals.html"
@@ -22,7 +22,7 @@ const ProjectsList = [
     new Project(
         "Time Mage",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Time Mage/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/Time Mage.html"
@@ -30,7 +30,7 @@ const ProjectsList = [
     new Project(
         "Ministry of Spinning",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Ministry of Spinning/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/Ministry of Spinning.html"
@@ -45,7 +45,7 @@ const ProjectsList = [
     ),
     new Project(
         "Godot stat bar",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "An augmented version of Godot's built-in progress bar, able to show change in value smoothly.",
         "assets/images/Godot stat bar/thumbnail.png",
         ProjectType.NOT_GAME,
         true,
@@ -62,10 +62,10 @@ const ProjectsList = [
     new Project(
         "Preys in... what where is this?",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/PIWWIT/cover_image.png",
         ProjectType.GAME,
         false,
-        "projects/Preys in... what where is this?.html"
+        "projects/PIWWIT.html"
     ),
     new Project(
         "Godot project template",
@@ -86,7 +86,7 @@ const ProjectsList = [
     new Project(
         "Jiangshi",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Jiangshi/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/Jiangshi.html"
@@ -110,7 +110,7 @@ const ProjectsList = [
     new Project(
         "Defender",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Defender/cover_image.png",
         ProjectType.GAME,
         false,
         "projects/Defender.html"
@@ -118,7 +118,7 @@ const ProjectsList = [
     new Project(
         "Rolling Knight",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Rolling Knight/cover_image.png",
         ProjectType.GAME,
         true,
         "projects/Rolling Knight.html"
@@ -126,7 +126,7 @@ const ProjectsList = [
     new Project(
         "Dive and Scavenge",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Dive and Scavenge/cover_image.png",
         ProjectType.GAME,
         true,
         "projects/Dive and Scavenge.html"
@@ -134,7 +134,7 @@ const ProjectsList = [
     new Project(
         "Into the Hole",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Into the Hole/cover_image.jpg",
         ProjectType.GAME,
         true,
         "projects/Into the Hole.html"
@@ -142,7 +142,7 @@ const ProjectsList = [
     new Project(
         "Uncover",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Uncover/cover_image.jpg",
         ProjectType.GAME,
         false,
         "projects/Uncover.html"
@@ -150,7 +150,7 @@ const ProjectsList = [
     new Project(
         "Rebels of the Order",
         "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Shiplogging/cover_image_630_500.png",
+        "assets/images/Rebels of the Order/cover_image.jpg",
         ProjectType.GAME,
         false,
         "projects/Rebels of the Order.html"

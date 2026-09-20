@@ -14,28 +14,28 @@
         <main>
             <h2>Godot stat bar</h2>
             <p>
-                You are a worker at a signal station, tasked to record data of passing ships.
-                You will have to communicate with them using international maritime signal flags.
+                An augmented version of Godot's built-in progress bar, able to show change in value smoothly.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/cover_image_630_500.png" style="width: 50%; margin: 0 25%;">
-                <figcaption>Shiplogging cover image</figcaption>
+                <video src="/assets/videos/stat_bar_demo.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of the stat bar</figcaption>
             </figure>
+            <h3>Implmentation</h3>
             <p>
-                Made by me in 3 days for <a href="https://ldjam.com/events/ludum-dare/59/shiplogging">Ludum Dare 59 Jam</a>.
-                You can play it <a href="https://creeperxd.itch.io/shiplogging">here</a>.
-            </p>
-            <h3>Game concept</h3>
-            <p>
-                The theme of the jam is <em>Signal</em>.
-                I came up with 2 ideas.
-                One of them is a stealth game, with a need to launch a signal flare on extraction point to be rescued.
-                The other involves ships with <a href="https://en.wikipedia.org/wiki/International_maritime_signal_flags">international maritime signal flags</a>.
-                I decided to go with the second idea as I find that more interesting, and I think that other people will too since international maritime signal flags is not commonly known.
+                Talk about the implementation, insert images
             </p>
             <p>
-                Finalised concept:
-                Play as a worker at a signal station, recording some information about passing ships by communicating with them using international maritime signal flags
+                Talk about the implementation, insert images
+            </p>
+            <h3>Known bug(s)</h3>
+            <p>
+                When developing <a href="/projects/Ministry of Spinning.html">Ministry of Spinning</a> I discovered that when reloading the scene containing the stat bar, the stat bar retains its previous current value.
+                I have not yet identified its cause.
+            </p>
+            <h3>Future addition(s)</h3>
+            <p>
+                Right now the change in value is done by interpolating the current value to target value every frame, resulting in a big change initially and quickly resulting in small changes.
+                I would like to add an option such that the change may be done by subtracting a fixed amount every frame for a more consistent change.
             </p>
         </main>
         <footer>
