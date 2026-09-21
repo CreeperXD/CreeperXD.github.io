@@ -22,10 +22,21 @@
             </figure>
             <h3>Implmentation</h3>
             <p>
-                Talk about the implementation, insert images
+                Godot already has 2 built-in progress bar nodes already, namely <a href="https://docs.godotengine.org/en/stable/classes/class_progressbar.html" target="_blank" rel="noopener noreferrer">ProgressBar</a> and <a href="https://docs.godotengine.org/en/stable/classes/class_textureprogressbar.html" target="_blank" rel="noopener noreferrer">TextureProgressBar</a>.
+                I chose to extend TextureProgressBar because it can be turned into a radial bar and be supplied a texture to draw on top of it.
             </p>
             <p>
-                Talk about the implementation, insert images
+                I first set up a test user interface that only consists of the extended TextureProgressBar and a button that randomises the <a href="https://docs.godotengine.org/en/stable/classes/class_range.html#class-range-property-value" target="_blank" rel="noopener noreferrer">value</a> of said progress bar.
+            </p>
+            <p>
+                Since the value property of the progress bar affects its fill, and that I want the change in value to be shown smoothly, I decided that a separate variable is needed to store the "actual" value set.
+                This variable will be private by convention, and any changes to it will be made via functions.
+            </p>
+            <p>
+                interpolation
+            </p>
+            <p>
+                difference visualisation
             </p>
             <h3>Known bug(s)</h3>
             <p>
