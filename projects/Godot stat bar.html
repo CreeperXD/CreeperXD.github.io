@@ -31,14 +31,27 @@
             <p>
                 Since the value property of the progress bar affects its fill, and that I want the change in value to be shown smoothly, I decided that a separate variable is needed to store the "actual" value set.
                 This variable will be private by convention, and any changes to it will be made via functions.
+                This allows the change in value be shown by interpolating the current fill display value to the set value every frame.
+            </p>
+            <figure>
+                <img src="/assets/images/Godot stat bar/code1.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Code in the <i>_process</i> function at this point</figcaption>
+            </figure>
+            <p>
+                What I have at this point is already usable for my future Godot projects, but I also wanted the option of having this effect below.
+            </p>
+            <figure>
+                <video src="/assets/videos/SIO2_difference_visualisation.mp4" width="500" height="200" controls>Your browser does not support the video tag.</video>
+                <figcaption>Cropped <i>Slug it Out 2</i> gameplay video focusing on the health bar</figcaption>
+            </figure>
+            <p>
+                I do not know what exactly is this effect called, but I will call it difference visualisation.
             </p>
             <p>
-                interpolation
+                This is when I discovered a bug where, which I quickly identified to be caused
+                is equal approx epsilon not custom
             </p>
-            <p>
-                difference visualisation
-            </p>
-            <h3>Known bug(s)</h3>
+            <h3>Known bug(s) or issue(s)</h3>
             <p>
                 When developing <a href="/projects/Ministry of Spinning.html">Ministry of Spinning</a> I discovered that when reloading the scene containing the stat bar, the stat bar retains its previous current value.
                 I have not yet identified its cause.
