@@ -23,33 +23,50 @@
             <h3>Implmentation</h3>
             <p>
                 Godot already has 2 built-in progress bar nodes already, namely <a href="https://docs.godotengine.org/en/stable/classes/class_progressbar.html" target="_blank" rel="noopener noreferrer">ProgressBar</a> and <a href="https://docs.godotengine.org/en/stable/classes/class_textureprogressbar.html" target="_blank" rel="noopener noreferrer">TextureProgressBar</a>.
-                I chose to extend TextureProgressBar because it can be turned into a radial bar and be supplied a texture to draw on top of it.
+                I chose to extend <i>TextureProgressBar</i> because it can be turned into a radial bar and be supplied a texture to draw on top of it.
             </p>
             <p>
-                I first set up a test user interface that only consists of the extended TextureProgressBar and a button that randomises the <a href="https://docs.godotengine.org/en/stable/classes/class_range.html#class-range-property-value" target="_blank" rel="noopener noreferrer">value</a> of said progress bar.
+                I first set up a test user interface that only consists of the extended <i>TextureProgressBar</i> and a button that randomises the <a href="https://docs.godotengine.org/en/stable/classes/class_range.html#class-range-property-value" target="_blank" rel="noopener noreferrer">value</a> of said progress bar.
             </p>
             <p>
-                Since the value property of the progress bar affects its fill, and that I want the change in value to be shown smoothly, I decided that a separate variable is needed to store the "actual" value set.
+                Since <i>value</i> affects its fill, and that I want its change to be shown smoothly, I decided that a separate variable is needed to store the "actual value" set.
                 This variable will be private by convention, and any changes to it will be made via functions.
-                This allows the change in value be shown by interpolating the current fill display value to the set value every frame.
+                This allows the said change to be shown by interpolating the current fill display value to the set value every frame.
             </p>
             <figure>
                 <img src="/assets/images/Godot stat bar/code1.png" style="width: 50%; margin: 0 25%;">
-                <figcaption>Code in the <i>_process</i> function at this point</figcaption>
+                <figcaption>
+                    Image showing the main code in the extended <i>TextureProgressBar</i> class at this point
+                </figcaption>
             </figure>
             <p>
-                What I have at this point is already usable for my future Godot projects, but I also wanted the option of having this effect below.
+                What I have at this point is already usable for my future Godot projects, but I also wanted the option of having this effect below that also works if the value is increasing instead.
+                I do not know what exactly is this effect called, but I will call it difference visualisation.
             </p>
             <figure>
                 <video src="/assets/videos/SIO2_difference_visualisation.mp4" width="500" height="200" controls>Your browser does not support the video tag.</video>
                 <figcaption>Cropped <i>Slug it Out 2</i> gameplay video focusing on the health bar</figcaption>
             </figure>
             <p>
-                I do not know what exactly is this effect called, but I will call it difference visualisation.
+                The first thing that came to my mind is to simply duplicate the progress bar to be used as the visualiser.
+                The visualiser bar will be updated first, followed by the main bar after the visualiser bar is done updating for a set amount of time.
+                2 additional textures are required, one for when the <i>value</i> of the visualiser bar is more than that of the main bar, one for the other way around.
+                In Godot, given the same <a href="https://docs.godotengine.org/en/stable/classes/class_canvasitem.html#class-canvasitem-property-z-index" target="_blank" rel="noopener noreferrer">Z index</a>, the nodes further down the scene tree are drawn on top of those further up.
+                This is why the visualiser bar is made child of the main bar, as it is now below the main bar in the scene tree.
+                And since <a href="https://docs.godotengine.org/en/stable/classes/class_canvasitem.html#class-canvasitem-property-z-as-relative" target="_blank" rel="noopener noreferrer">Z index of a child is relative to its parent by default</a>, if the <i>value</i> of the visualiser bar is higher, its <i>Z index</i> is simply set to -1, making the main bar be drawn on top instead.
+                The check on both <i>values</i> is done every frame when the visualiser bar is updating, allowing the appropriate textures to be applied immediately.
             </p>
             <p>
-                This is when I discovered a bug where, which I quickly identified to be caused
-                is equal approx epsilon not custom
+                This is when I discovered a bug where a lot of the times the main bar is never updated.
+                I identified them to be caused by the fact that the visualiser bar is never considered to be finished updating, even though I used <a href="https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#class-globalscope-method-is-equal-approx" target="_blank" rel="noopener noreferrer">is_equal_approx</a> to compare <i>value</i> and "actual value".
+                This is because the progress bar's smallest step possible is 0.001 while the epsilon value that <i>is_equal_approx</i> uses is 0.00001, and crucially it is unable to be changed.
+                Therefore, I simply copied the code for <i>is_equal_approx</i> from <a href="https://github.com/godotengine/godot/blob/f4b0c7a1ea8d86c1dfd96478ca12ad1360903d9d/core/math/math_funcs.h#L342-L362" target="_blank" referrerpolicy="noopener noreferrer">engine code</a> to a custom function and have the epsilon value to be the same as the smallest progress bar step.
+            </p>
+            <p>
+                preview
+            </p>
+            <p>
+                difference visualisation bug, make time based instead
             </p>
             <h3>Known bug(s) or issue(s)</h3>
             <p>
