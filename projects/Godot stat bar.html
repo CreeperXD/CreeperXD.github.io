@@ -16,13 +16,16 @@
             <p>
                 An augmented version of Godot's built-in progress bar, able to show change in value smoothly.
             </p>
+            <p>
+                So far used in <a href="/projects/Ministry of Spinning.html">Ministry of Spinning</a>.
+            </p>
             <figure>
                 <video src="/assets/videos/stat_bar_demo.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
                 <figcaption>Video demonstration of the stat bar</figcaption>
             </figure>
             <h3>Implmentation</h3>
             <p>
-                Godot already has 2 built-in progress bar nodes already, namely <a href="https://docs.godotengine.org/en/stable/classes/class_progressbar.html" target="_blank" rel="noopener noreferrer">ProgressBar</a> and <a href="https://docs.godotengine.org/en/stable/classes/class_textureprogressbar.html" target="_blank" rel="noopener noreferrer">TextureProgressBar</a>.
+                Godot has 2 built-in progress bar nodes already, namely <a href="https://docs.godotengine.org/en/stable/classes/class_progressbar.html" target="_blank" rel="noopener noreferrer">ProgressBar</a> and <a href="https://docs.godotengine.org/en/stable/classes/class_textureprogressbar.html" target="_blank" rel="noopener noreferrer">TextureProgressBar</a>.
                 I chose to extend <i>TextureProgressBar</i> because it can be turned into a radial bar and be supplied a texture to draw on top of it.
             </p>
             <p>
@@ -63,20 +66,25 @@
                 Therefore, I simply copied the code for <i>is_equal_approx</i> from <a href="https://github.com/godotengine/godot/blob/f4b0c7a1ea8d86c1dfd96478ca12ad1360903d9d/core/math/math_funcs.h#L342-L362" target="_blank" referrerpolicy="noopener noreferrer">engine code</a> to a custom function and have the epsilon value to be the same as the smallest progress bar step.
             </p>
             <p>
-                preview
+                With the difference visualisation done, I thought about reusing the visualiser bar to preview values.
+                I added 3 more functions, one to set the previewed value, one to confirm it, and another to cancel the preview.
             </p>
             <p>
-                difference visualisation bug, make time based instead
+                I also updated the test user interface with a check button that toggles whether pressing the randomise value button sets or previews values, and 2 buttons for confirming and canceling the previewed value.
+            </p>
+            <p>
+                I found out that the previous bug actually has not been completely fixed, as there are still some values that could trigger its cause.
+                I thought about changing the epsilon value, but I decided to skip waiting for the visualiser bar to finish updating, which is simpler and does not really change the effect siginificantly anyway.
             </p>
             <h3>Known bug(s) or issue(s)</h3>
             <p>
-                When developing <a href="/projects/Ministry of Spinning.html">Ministry of Spinning</a> I discovered that when reloading the scene containing the stat bar, the stat bar retains its previous current value.
+                When developing <i>Ministry of Spinning</i> I discovered that when reloading the scene containing the stat bar, the stat bar retains its previous current value.
                 I have not yet identified its cause.
             </p>
             <h3>Future addition(s)</h3>
             <p>
                 Right now the change in value is done by interpolating the current value to target value every frame, resulting in a big change initially and quickly resulting in small changes.
-                I would like to add an option such that the change may be done by subtracting a fixed amount every frame for a more consistent change.
+                I would like to add an option such that the change may be done by adding or subtracting a fixed amount every frame for a more consistent change.
             </p>
         </main>
         <footer>
