@@ -37,7 +37,7 @@ const ProjectsList = [
     ),
     new Project(
         "Shiplogging",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a worker at a signal station, recording some information about passing ships by communicating with them using international maritime signal flags.",
         "assets/images/Shiplogging/cover_image_630_500.png",
         ProjectType.GAME,
         true,

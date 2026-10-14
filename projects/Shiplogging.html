@@ -14,29 +14,152 @@
         <main>
             <h2>Shiplogging</h2>
             <p>
-                You are a worker at a signal station, tasked to record data of passing ships.
-                You will have to communicate with them using international maritime signal flags.
+                Play as a worker at a signal station, recording some information about passing ships by communicating with them using international maritime signal flags.
+            </p>
+            <p>
+                Made by me in 3 days for <a href="https://ldjam.com/events/ludum-dare/59/shiplogging">Ludum Dare 59 Jam</a>.
+                You can play it <a href="https://creeperxd.itch.io/shiplogging">here</a>.
             </p>
             <figure>
                 <img src="/assets/images/Shiplogging/cover_image_630_500.png" style="width: 50%; margin: 0 25%;">
                 <figcaption>Shiplogging cover image</figcaption>
             </figure>
-            <p>
-                Made by me in 3 days for <a href="https://ldjam.com/events/ludum-dare/59/shiplogging">Ludum Dare 59 Jam</a>.
-                You can play it <a href="https://creeperxd.itch.io/shiplogging">here</a>.
-            </p>
             <h3>Game concept</h3>
             <p>
                 The theme of the jam is <em>Signal</em>.
                 I came up with 2 ideas.
                 One of them is a stealth game, with a need to launch a signal flare on extraction point to be rescued.
-                The other involves ships with <a href="https://en.wikipedia.org/wiki/International_maritime_signal_flags">international maritime signal flags</a>.
+                The other involves ships with <a href="https://en.wikipedia.org/wiki/International_maritime_signal_flags" target="_blank" rel="noopener noreferrer">international maritime signal flags</a>.
                 I decided to go with the second idea as I find that more interesting, and I think that other people will too since international maritime signal flags is not commonly known.
             </p>
+            <h3>Implementation</h3>
             <p>
-                Finalised concept:
-                Play as a worker at a signal station, recording some information about passing ships by communicating with them using international maritime signal flags
+                I decided to use Godot since it is my favourite engine and I can start with <a href="/projects/Godot project template.html">my project template</a>.
             </p>
+            <h4>Ship data generation</h4>
+            <p>
+                I wanted the ships to have an identifying code, origin and desination ports, as well as estimated remaining voyage time.
+            </p>
+            <p>
+                The code is split into 2 parts, the first is 1 or 2 random letters in between <i>A</i> to <i>Z</i>, and the second is simply a random number in between 1 to 99.
+                It is possible that the same code can be generated again, which in that case the code is simply regenerated until it is unique.
+            </p>
+            <p>
+                To ensure that both origin and destination ports are unique, the origin port is <a href="https://docs.godotengine.org/en/stable/classes/class_array.html#class-array-method-pop-at" target="_blank" rel="noopener noreferrer">popped</a> from a duplicated array of ports, before having the destination port <a href="https://docs.godotengine.org/en/stable/classes/class_array.html#class-array-method-pick-random" target="_blank" rel="noopener noreferrer">picked</a>.
+            </p>
+            <p>
+                From my crude research, I learned that a ship from Europe will take about 30 days to reach Melaka.
+                This allows the unit for estimated remaining voyage time to be days, which I think is perfect when shown in flags.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_ship_data.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the ship class at this point</figcaption>
+            </figure>
+            <figure>
+                <video src="/assets/videos/shiplogging_ship_data.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of the generation of ship data</figcaption>
+            </figure>
+            <h4>Scoring</h4>
+            <p>
+                I wanted the score to be based on how many ships with the correct data recorded.
+            </p>
+            <p>
+                I first created an entry, which is 3 <a href="https://docs.godotengine.org/en/stable/classes/class_lineedit.html" target="_blank" rel="noopener noreferrer">inputs</a> for non-code ship data surrounded by <a href="https://docs.godotengine.org/en/stable/classes/class_label.html" target="_blank" rel="noopener noreferrer">labels</a>.
+                The ship code is reflected in one of the labels to be used as a guide on which entry corresponds to which ship.
+                The inputs and labels are all children of a <a href="https://docs.godotengine.org/en/stable/classes/class_hboxcontainer.html" target="_blank" rel="noopener noreferrer">container that arranges them horizontally</a>.
+                The entries in turn are all children of a <a href="https://docs.godotengine.org/en/stable/classes/class_vboxcontainer.html" target="_blank" rel="noopener noreferrer">container that arranges them vertically</a>.
+            </p>
+            <p>
+                1 score is awarded if all text within an entry's inputs matches exactly with the corresponding ship data text.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_scoring.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the functions responsible for scoring in the level script</figcaption>
+            </figure>
+            <figure>
+                <video src="/assets/videos/shiplogging_scoring.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of scoring</figcaption>
+            </figure>
+            <h4>Ship spawning and movement</h4>
+            <p>
+                There can be up to 3 ships on screen at one time, and they can come from the left or right.
+                For simplicity, I want the ships to move from one side of the screen to the other after spawning.
+            </p>
+            <p>
+                I decided to represent the route a ship will take via a class.
+                It will contain 2 <a href="https://docs.godotengine.org/en/stable/classes/class_marker3d.html" target="_blank" rel="noopener noreferrer">markers</a>, which can be visualised more easily when changing their position in the editor.
+                I wanted the route to be able to be occupied such that there can only be 1 ship moving in it.
+                An <a href="https://docs.godotengine.org/en/stable/classes/class_area3d.html" target="_blank" rel="noopener noreferrer">area collider</a> is used to detect when the ship reaches the end location, making a route vacant.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_route.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the route class at this point</figcaption>
+            </figure>
+            <p>
+                The ships will spawn on a timer.
+                <a href="https://docs.godotengine.org/en/stable/classes/class_timer.html#class-timer-property-one-shot" target="_blank" rel="noopener noreferrer">It loops by default</a>, but it uses the same set <a href="https://docs.godotengine.org/en/stable/classes/class_timer.html#class-timer-property-wait-time" target="_blank" rel="noopener noreferrer">wait time</a>.
+                I wanted some variation in said time, so I manually <a href="https://docs.godotengine.org/en/stable/classes/class_timer.html#class-timer-method-start" target="_blank" rel="noopener noreferrer">start</a> the timer with said time randomised each time the timer ends.
+                An array of vacant routes is used to determine whether a ship should spawn, 1 to be randomly <i>popped</i> if so.
+                This is why instead of using a boolean variable to represent if a route is vacant, I decided to emit a <a href="https://docs.godotengine.org/en/stable/classes/class_signal.html" target="_blank" rel="noopener noreferrer">signal</a> when it does so said route can be appended into the aforementioned array.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_ship_spawning.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the functions responsible for ship spawning in the level script</figcaption>
+            </figure>
+            <p>
+                When a ship first occupies a route, it is rotated to face the end location.
+                Every physics frame, it is being moved forward, calculated using <a href="https://docs.godotengine.org/en/stable/classes/class_basis.html#class-basis-property-z" target="_blank" rel="noopener noreferrer">transform.basis.z</a> (facing backwards) and -1 (inverts direction, so now facing forwards).
+                After a route is vacant, the ship's data is still required for score calculation even though it is no longer seen by the player, so it is <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#enum-node-processmode" target="_blank" rel="noopener noreferrer">disabled</a> instead of <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-queue-free" target="_blank" rel="noopener noreferrer">freed</a>.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_ship_movement.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the functions at this point in the ship class, with those responsible for movement shown in full</figcaption>
+            </figure>
+            <figure>
+                <video src="/assets/videos/shiplogging_ship_spawning.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of ship spawning and movement</figcaption>
+            </figure>
+            <h4>Flag rack</h4>
+            <p>
+                I first created a script that stores all the flag textures via a dictionary with their corresponding characters being the keys.
+                The script is then made an <a href="https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html" target="_blank" rel="noopener noreferrer">autoload</a> so it can be accessed by anything.
+                In hindsight, making it a static class instead is better since the script only stores the dictionary and does nothing else.
+                An <i>autoload</i> is only needed when the game state will be modified, such as modifying nodes or using <i>signal</i>s.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_imsf.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing part of the dictionary of flag textures</figcaption>
+            </figure>
+            <p>
+                I wanted the inputting of message to be similar to using a keyboard but pressing buttons instead of typing on keyboard.
+                Pressing on flag buttons will input a character, while there will be 2 buttons for removing the last character and sending the message respectively.
+            </p>
+            <p>
+                In the flag rack, all flag buttons are arranged using containers.
+                As such, when the buttons are selected to have their respective flag texture and character set, <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-find-children" target="_blank" rel="noopener noreferrer">find_children()</a> which returns all descendants is used instead of the usual <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-get-children" target="_blank" rel="noopener noreferrer">get_children()</a> that only returns immediate children.
+                It should be noted that it is assumed that the number of flag buttons matches the number of characters.
+                If there are less flag buttons, not every character is represented; if there are more, an error will be thrown.
+                Since there will always be 36 characters (26 uppercase alphabets and 10 digits), this is not really an issue.
+            </p>
+            <p>
+                The request message is stored internally and displayed to the player as a line of flags.
+                The maximum length of the message can be changed by adding more flag <a href="https://docs.godotengine.org/en/stable/classes/class_texturerect.html" target="_blank" rel="noopener noreferrer">TextureRect</a>s into the container for them in the editor.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_flag_rack.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the flag rack class at this point</figcaption>
+            </figure>
+            <figure>
+                <video src="/assets/videos/shiplogging_flag_rack.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of flag rack</figcaption>
+            </figure>
+            <h4>Communication with ships</h4>
+            decode
+            display
+            in flags
+            <h4>game loop</h4>
+
+            <h4>finishing touches</h4>
         </main>
         <footer>
             Something went wrong
