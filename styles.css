@@ -163,6 +163,5 @@ footer {
   background-color: rgb(0, 25, 0);
   padding: 25px;
   display: flex;
-  justify-content: space-between;
-  gap: 25px;
+  justify-content: end;
 }
