@@ -154,9 +154,35 @@
                 <figcaption>Video demonstration of flag rack</figcaption>
             </figure>
             <h4>Communication with ships</h4>
-            decode
-            display
-            in flags
+            <p>
+                I decided to decode the message by first <a href="https://docs.godotengine.org/en/stable/classes/class_string.html#class-string-method-find" target="_blank" rel="noopener noreferrer">finding</a> a valid request code in it, which will be <a href="https://docs.godotengine.org/en/stable/classes/class_string.html#class-string-method-erase" target="_blank" rel="noopener noreferrer">erased</a> if it exists.
+                If the erased message is one of the ship codes, the request code is passed to the corresponding ship.
+            </p>
+            <p>
+                As I am writing this article I realised that this implementation means players are not required to input the request code after the ship code as I intended to.
+                This is because there is no check on whether the request code comes after the ship code.
+                A possible fix is to first check if the ship code exists and it is in front before passing the message with the ship code erased to the corresponding ship, which already checks the passed string anyways.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_decode_message.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the function responsible for decoding request message in the level script</figcaption>
+            </figure>
+            <p>
+                The ship's code is always displayed while the other data is displayed if requested.
+                They are displayed in flags, which are <a href="https://docs.godotengine.org/en/stable/classes/class_sprite3d.html" target="_blank" rel="noopener noreferrer">Sprite3D</a>s.
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_display_data_1.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the function responsible for determining what data to show in the ship class</figcaption>
+            </figure>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_display_data_2.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the function responsible for displaying data in the ship class</figcaption>
+            </figure>
+            <figure>
+                <video src="/assets/videos/shiplogging_ship_communication.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
+                <figcaption>Video demonstration of ship communication</figcaption>
+            </figure>
             <h4>game loop</h4>
 
             <h4>finishing touches</h4>
