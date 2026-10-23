@@ -9,15 +9,7 @@ const ProjectsList = [
         "assets/images/laksa mana/cover_image.png",
         ProjectType.GAME,
         false,
-        "projects/laksa mana?.html"
-    ),
-    new Project(
-        "Done Deals",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
-        "assets/images/Done Deals/cover_image.png",
-        ProjectType.GAME,
-        false,
-        "projects/Done Deals.html"
+        "projects/laksa mana.html"
     ),
     new Project(
         "Time Mage",
