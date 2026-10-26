@@ -42,7 +42,7 @@
                 I wanted the ships to have an identifying code, origin and desination ports, as well as estimated remaining voyage time.
             </p>
             <p>
-                The code is split into 2 parts, the first is 1 or 2 random letters in between <i>A</i> to <i>Z</i>, and the second is simply a random number in between 1 to 99.
+                The code is split into 2 parts, the first is 1 or 2 random alphabets in between <i>A</i> to <i>Z</i>, and the second is simply a random number in between 1 to 99.
                 It is possible that the same code can be generated again, which in that case the code is simply regenerated until it is unique.
             </p>
             <p>
@@ -184,9 +184,19 @@
                 <video src="/assets/videos/shiplogging_ship_communication.mp4" width="500" height="300" controls>Your browser does not support the video tag.</video>
                 <figcaption>Video demonstration of ship communication</figcaption>
             </figure>
-            <h4>game loop</h4>
-
-            <h4>finishing touches</h4>
+            <h4>Finishing touches</h4>
+            <p>
+                To finish the game loop, a countdown timer for game end is added. Score is now calculated when the game is ended.
+            </p>
+            <p>
+                Since all game alphabets are uppercase, it would be easier for the players if alphabets in inputs are capitalised automatically.
+                It appears that the <a href="https://docs.godotengine.org/en/stable/classes/class_lineedit.html#class-lineedit-property-caret-column">caret's column position</a> is always set to 0 (left of first character) after setting <a href="https://docs.godotengine.org/en/stable/classes/class_lineedit.html#class-lineedit-property-text">text</a> directly.
+                Assuming the player will not set the caret's column position manually by clicking in between the characters, said position is set to the text length (right of last character).
+            </p>
+            <figure>
+                <img src="/assets/images/Shiplogging/code_data_entry.png" style="width: 50%; margin: 0 25%;">
+                <figcaption>Image showing the data entry class</figcaption>
+            </figure>
         </main>
         <footer>
             Something went wrong
