@@ -4,8 +4,16 @@ import Project, {ProjectType} from "./Project.js";
 
 const ProjectsList = [
     new Project(
+        "Floppy Disk Orienteering",
+        "Navigate your way in a forest to collect floppy disks, but you are only given a map and compass.",
+        "assets/images/Floppy Disk Orienteering/cover_image.png",
+        ProjectType.GAME,
+        true,
+        "projects/Floppy Disk Orienteering.html"
+    ),
+    new Project(
         "laksa mana?",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Serve different variations of laksa, all named after Malaysian states.",
         "assets/images/laksa mana/cover_image.png",
         ProjectType.GAME,
         false,
@@ -13,7 +21,7 @@ const ProjectsList = [
     ),
     new Project(
         "Time Mage",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a wizard cursed by demons to constantly age, having to slay them to get back lost time.",
         "assets/images/Time Mage/cover_image.png",
         ProjectType.GAME,
         false,
@@ -21,7 +29,7 @@ const ProjectsList = [
     ),
     new Project(
         "Ministry of Spinning",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as the minister of propaganda spinning war news into something positive.",
         "assets/images/Ministry of Spinning/cover_image.png",
         ProjectType.GAME,
         false,
@@ -45,7 +53,7 @@ const ProjectsList = [
     ),
     new Project(
         "Godot 3D character controller",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "A customisable physics-based 3D character controller for Godot.",
         "assets/images/Godot 3D character controller/thumbnail.png",
         ProjectType.NOT_GAME,
         true,
@@ -53,7 +61,7 @@ const ProjectsList = [
     ),
     new Project(
         "Preys in... what where is this?",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a cat hunting mice in some... strange places.",
         "assets/images/PIWWIT/cover_image.png",
         ProjectType.GAME,
         false,
@@ -61,7 +69,7 @@ const ProjectsList = [
     ),
     new Project(
         "Godot project template",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "A project template for Godot with some commonly used systems.",
         "assets/images/godot_icon.svg",
         ProjectType.NOT_GAME,
         true,
@@ -77,7 +85,7 @@ const ProjectsList = [
     ),
     new Project(
         "Jiangshi",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Explore a dead village.",
         "assets/images/Jiangshi/cover_image.png",
         ProjectType.GAME,
         false,
@@ -85,7 +93,7 @@ const ProjectsList = [
     ),
     new Project(
         "GoGoDino Fun Zone",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "GoGoDino in a Roblox experience.",
         "assets/images/GoGoDino Fun Zone/icon.webp",
         ProjectType.GAME,
         true,
@@ -93,7 +101,7 @@ const ProjectsList = [
     ),
     new Project(
         "WebAR Model Displayer",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Scan a QR code to display a model on it.",
         "assets/images/WebAR Model Displayer/thumbnail.jpeg",
         ProjectType.NOT_GAME,
         false,
@@ -101,7 +109,7 @@ const ProjectsList = [
     ),
     new Project(
         "Defender",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a defensive AI for the world server against the intrusion of a rogue AI in a tower defense.",
         "assets/images/Defender/cover_image.png",
         ProjectType.GAME,
         false,
@@ -109,7 +117,7 @@ const ProjectsList = [
     ),
     new Project(
         "Rolling Knight",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a knight cursed by a witch to be confined in a ball but can now manipulate certain objects by scaling them.",
         "assets/images/Rolling Knight/cover_image.png",
         ProjectType.GAME,
         true,
@@ -117,7 +125,7 @@ const ProjectsList = [
     ),
     new Project(
         "Dive and Scavenge",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a diver hired by a scavenger group to scavenge valuable items in an underground lake.",
         "assets/images/Dive and Scavenge/cover_image.png",
         ProjectType.GAME,
         true,
@@ -125,7 +133,7 @@ const ProjectsList = [
     ),
     new Project(
         "Into the Hole",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Slide a ball into a hole within 20 seconds.",
         "assets/images/Into the Hole/cover_image.jpg",
         ProjectType.GAME,
         true,
@@ -133,7 +141,7 @@ const ProjectsList = [
     ),
     new Project(
         "Uncover",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Are you alone? Uncover things as you go.",
         "assets/images/Uncover/cover_image.jpg",
         ProjectType.GAME,
         false,
@@ -141,7 +149,7 @@ const ProjectsList = [
     ),
     new Project(
         "Rebels of the Order",
-        "You are a worker at a signal station, tasked to record data of passing ships. You will have to communicate with them using international maritime signal flags.",
+        "Play as a rebel soldier against the authoritarian regime in a turn-based combat.",
         "assets/images/Rebels of the Order/cover_image.jpg",
         ProjectType.GAME,
         false,
