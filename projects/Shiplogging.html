@@ -22,7 +22,7 @@
                 You can play it <a href="https://creeperxd.itch.io/shiplogging">here</a>.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/cover_image_630_500.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/cover_image_630_500.png">
                 <figcaption>Shiplogging cover image</figcaption>
             </figure>
             <h3>Game concept</h3>
@@ -53,7 +53,7 @@
                 This allows the unit for estimated remaining voyage time to be days, which I think is perfect when shown in flags.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_ship_data.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_ship_data.png">
                 <figcaption>Image showing the ship class at this point</figcaption>
             </figure>
             <figure>
@@ -74,7 +74,7 @@
                 1 score is awarded if all text within an entry's inputs matches exactly with the corresponding ship data text.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_scoring.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_scoring.png">
                 <figcaption>Image showing the functions responsible for scoring in the level script</figcaption>
             </figure>
             <figure>
@@ -93,7 +93,7 @@
                 An <a href="https://docs.godotengine.org/en/stable/classes/class_area3d.html">area collider</a> is used to detect when the ship reaches the end location, making a route vacant.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_route.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_route.png">
                 <figcaption>Image showing the route class at this point</figcaption>
             </figure>
             <p>
@@ -104,7 +104,7 @@
                 This is why instead of using a boolean variable to represent if a route is vacant, I decided to emit a <a href="https://docs.godotengine.org/en/stable/classes/class_signal.html">signal</a> when it does so said route can be appended into the aforementioned array.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_ship_spawning.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_ship_spawning.png">
                 <figcaption>Image showing the functions responsible for ship spawning in the level script</figcaption>
             </figure>
             <p>
@@ -113,7 +113,7 @@
                 After a route is vacant, the ship's data is still required for score calculation even though it is no longer seen by the player, so it is <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#enum-node-processmode">disabled</a> instead of <a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-method-queue-free">freed</a>.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_ship_movement.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_ship_movement.png">
                 <figcaption>Image showing the functions at this point in the ship class, with those responsible for movement shown in full</figcaption>
             </figure>
             <figure>
@@ -128,7 +128,7 @@
                 An <i>autoload</i> is only needed when the game state will be modified, such as modifying nodes or using <i>signal</i>s.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_imsf.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_imsf.png">
                 <figcaption>Image showing part of the dictionary of flag textures</figcaption>
             </figure>
             <p>
@@ -147,7 +147,7 @@
                 The maximum length of the message can be changed by adding more flag <a href="https://docs.godotengine.org/en/stable/classes/class_texturerect.html">TextureRect</a>s into the container for them in the editor.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_flag_rack.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_flag_rack.png">
                 <figcaption>Image showing the flag rack class at this point</figcaption>
             </figure>
             <figure>
@@ -165,7 +165,7 @@
                 A possible fix is to first check if the ship code exists and it is in front before passing the message with the ship code erased to the corresponding ship, which already checks the passed string anyways.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_decode_message.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_decode_message.png">
                 <figcaption>Image showing the function responsible for decoding request message in the level script</figcaption>
             </figure>
             <p>
@@ -173,11 +173,11 @@
                 They are displayed in flags, which are <a href="https://docs.godotengine.org/en/stable/classes/class_sprite3d.html">Sprite3D</a>s.
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_display_data_1.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_display_data_1.png">
                 <figcaption>Image showing the function responsible for determining what data to show in the ship class</figcaption>
             </figure>
             <figure>
-                <img src="/assets/images/Shiplogging/code_display_data_2.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_display_data_2.png">
                 <figcaption>Image showing the function responsible for displaying data in the ship class</figcaption>
             </figure>
             <figure>
@@ -194,7 +194,7 @@
                 Assuming the player will not set the caret's column position manually by clicking in between the characters, said position is set to the text length (right of last character).
             </p>
             <figure>
-                <img src="/assets/images/Shiplogging/code_data_entry.png" style="width: 50%; margin: 0 25%;">
+                <img src="/assets/images/Shiplogging/code_data_entry.png">
                 <figcaption>Image showing the data entry class</figcaption>
             </figure>
         </main>

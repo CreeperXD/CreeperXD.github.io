@@ -156,6 +156,11 @@ div.ProjectTextContainer p {
   margin: 0;
 }
 
+figure img {
+  width: 50%;
+  margin: 0 25%;
+}
+
 
 /* Footer */
 
