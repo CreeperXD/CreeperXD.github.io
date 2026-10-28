@@ -105,7 +105,7 @@ const ProjectsList = [
         "assets/images/WebAR Model Displayer/thumbnail.jpeg",
         ProjectType.NOT_GAME,
         false,
-        "projects/WebAR Model Displayer.html"
+        "projects/WebAR Model Displayer/index.html"
     ),
     new Project(
         "Defender",
